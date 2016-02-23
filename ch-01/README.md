@@ -45,5 +45,47 @@
   
 ## Sample Data
   
+Let's look at the following Data
   
+```
+  {
+     "id": 2341,
+     "isbn": "xxxxxx",
+     "name": "Seven Habits of Highly Effective People",
+     "author":???
+     "libraryCard":???
+  }
+```
+     
+```
+  {
+     "id": 123933,
+     "firstName": " Stephen",
+     "lastName": "Covey",
+     "books": ???
+  }
+```
+     
+```
+  {
+     "id":449232,
+     "book": ????,     
+     "available": false,
+     "issuedTo":???,
+     "history":???
+  }
+```       
 
+We have a Library System in which we have to put in data related to 
+
+ * Book
+ * Author
+ * Library Issue Card for that Book (This contains when we issued the book to whom)
+ 
+Some considerations we have to make are
+ * A Book can be written by single Author
+ * An Author can write multiple Books
+ * There is only one Library Issue Card per book.
+  
+  
+ 
