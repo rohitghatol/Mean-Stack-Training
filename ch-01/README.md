@@ -143,8 +143,41 @@ Some considerations we have to make are
  
 ### View the Book Collection
  
-
  ```
  mongo> db.books.find().pretty();
  ```
+
+### View only certain attributes of a Book (called Projection)
+  
+  Show only isbn and name attributes
+
+ ```
+ mongo> db.books.find({},{"isbn":1,"name":1}).pretty();
+ ```
+
+### Limiting Result Size
+    
+ ```
+ mongo> db.authors.find().limit(1).pretty();
+ ```
+
+### Sort Ascending
+    
+ Use 1 for ascending vs -1 for descending
+    
+ ```
+ mongo> db.authors.find().sort({"firstName":1}).pretty();
+ ```
+
+
+### Update Book and add an Attribute named Type
+
+ ```
+ mongo> db.books.update({"name":"Seven Habits"},{$set:{"type":"Self-Helf"}});
+ ```
  
+### Delete Author
+
+ ```
+ mongo> db.authors.remove({"firstName":"Mark"});
+ ``` 
