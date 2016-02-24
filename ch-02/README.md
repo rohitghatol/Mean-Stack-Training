@@ -149,7 +149,9 @@ Step 1 - Create a Project directory
  
  Step 3 - Create Test Data
  
- ``` $> echo "Hello World" > test.txt
+   ``` 
+   $> echo "Hello World" > test.txt
+   ```
  
  Step 4 - Create index.js
   
