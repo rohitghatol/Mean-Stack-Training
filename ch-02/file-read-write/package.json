@@ -1,0 +1,17 @@
+{
+  "name": "file-read-write",
+  "version": "1.0.0",
+  "description": "File Read and Write",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "file",
+    "read",
+    "write",
+    "node"
+  ],
+  "author": "Rohit Ghatol",
+  "license": "Apache-2.0"
+}

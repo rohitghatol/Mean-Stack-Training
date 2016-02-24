@@ -121,3 +121,68 @@ Node needs two things to work
    ```
    $> node index
    ``` 
+   
+## Read and Write to a File  
+
+Step 1 - Create a Project directory
+ 
+ ```
+ $> mkdir file-read-write
+ ```
+ 
+ Step 2 - Initialize NPM Project
+ 
+ ```
+ $> cd module-test
+ $> npm init
+ name: (ch-02) file-read-write
+ version: (1.0.0) 
+ description: File Read and Write 
+ entry point: (index.js) 
+ test command: 
+ git repository: 
+ keywords: file read write node
+ author: Rohit Ghatol
+ license: (ISC) Apache-2.0
+ 
+ ```
+ 
+ Step 3 - Create Test Data
+ 
+ ``` $> echo "Hello World" > test.txt
+ 
+ Step 4 - Create index.js
+  
+  ```
+  var fs = require('fs');
+  
+  
+  var read = function(fileName){
+    return fs.readFileSync(fileName, 'utf8');
+    
+  }
+  
+  var write = function(fileName,content){
+    fs.writeFile(fileName,content, 'utf8');
+  }
+  
+  
+  var contents = read('test.txt');  
+  console.log('Read '+contents);
+  
+  contents = contents + "!!";
+  
+  write('test.txt',contents);
+  console.log('Wrote '+contents);
+  
+  contents = read('test.txt');
+  console.log('Read '+contents);
+  
+  
+  ```
+ 
+  Step 5 - Run the Program
+   
+   ```
+   $> node index
+   ``` 
