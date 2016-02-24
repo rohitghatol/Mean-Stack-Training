@@ -9,7 +9,7 @@ Node needs two things to work
  * Download and Install Node from this link - https://nodejs.org/en/download/
  * It will also install NPM
  
-## Project Setup
+## Hello World Project
  
  Step 1 - Create a Project directory
  
@@ -20,6 +20,7 @@ Node needs two things to work
  Step 2 - Initialize NPM Project
  
  ```
+ $> cd helloworld
  $> npm init
  name: (ch-02) helloworld
  version: (1.0.0) 
@@ -29,7 +30,7 @@ Node needs two things to work
  git repository: 
  keywords: helloworld node
  author: Rohit Ghatol
- license: (ISC) Apache-License
+ license: (ISC) Apache-2.0
  
  ```
  
@@ -51,3 +52,72 @@ Node needs two things to work
  $> node index
  ```
  
+## Node Modules Project
+ 
+ Step 1 - Create a Project directory
+ 
+ ```
+ $> mkdir module-test
+ ```
+ 
+ Step 2 - Initialize NPM Project
+ 
+ ```
+ $> cd module-test
+ $> npm init
+ name: (ch-02) module-test
+ version: (1.0.0) 
+ description: Using Modules for HelloWorld 
+ entry point: (index.js) 
+ test command: 
+ git repository: 
+ keywords: helloworld modules node
+ author: Rohit Ghatol
+ license: (ISC) Apache-2.0
+ 
+ ```
+ 
+ Step 3 - Create hello.js
+ 
+ ```
+ module.exports = {
+    getValue: function(){
+      return "Hello";
+    }  
+ }
+
+ 
+ ```
+
+  Step 4 - Create world.js
+  
+  ```
+  module.exports = {
+     getValue: function(){
+       return "World";
+     }  
+  }
+ 
+  
+  ```
+
+ Step 4 - Import the Modules in index.js
+ 
+ 
+  
+  ```
+  var hello = require('./hello');
+  var world = require('./world');
+  
+  
+  var helloWorld = hello.getValue() + " " + world.getValue();
+  
+  console.log(helloWorld);
+  
+  ```
+ 
+  Step 5 - Run the Program
+   
+   ```
+   $> node index
+   ``` 
