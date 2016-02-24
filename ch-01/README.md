@@ -88,4 +88,63 @@ Some considerations we have to make are
  * There is only one Library Issue Card per book.
   
   
+## Mongo Usage
+ 
+### Show all databases
+ 
+ ```
+ mongo> show dbs
+ ```
+ 
+### Create a New Database named test
+ 
+ ```
+ mongo> use test
+ ```
+
+### See All Collections 
+
+ Collection is equivalent of table in mongodb, but doesn't support joins, transactions, foreign keys etc
+ 
+ ```
+ mongo> show collections
+ ```
+ 
+### Insert a New Author
+ 
+ ```
+ mongo> db.authors.insert({"firstName":"Steven","lastName":"Covey"})
+ ```
+ 
+### View the Author Collection
+ 
+ ```
+ mongo> db.authors.find().pretty();
+ ```
+
+### Insert a Another Author
+ 
+ ```
+ mongo> db.authors.insert({"firstName":"Steven","lastName":"Smith"})
+ mongo> db.authors.insert({"firstName":"Mark","lastName":"Stew"})
+ ```
+
+### Filter Authors by first Name 
+ 
+ ```
+ mongo> db.authors.find({"firstName":"Steven"}).pretty();
+ ```
+
+### Insert a Book
+ 
+ ``` 
+ mongo> db.books.insert({"isbn":"1234","name":"Seven Habits", "author":{"$ref":"authors","$id":ObjectId("56ccf2998339eb0b8fb7f65f")}, "card":{"available":true,"history":[]}});
+ ```
+ 
+### View the Book Collection
+ 
+
+ ```
+ mongo> db.books.find().pretty();
+ ```
  
